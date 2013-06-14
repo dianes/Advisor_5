@@ -1,0 +1,93 @@
+<div data-role="view" id="recentContactsView" data-title="Recent Contacts" data-show="getContactList">
+	<header data-role="header">
+		<div data-role="navbar">
+            <a id="btnContactSearch" data-role="button" href="views/contactSearchView.html" 
+                 data-align="left" data-icon="search"></a>
+            <span data-role="view-title"></span>
+		</div>
+	</header>
+    
+     <ul id="contactlist" data-role="listview" data-style="inset"></ul>
+</div>    
+
+<script type="text/x-kendo-template" id="recentcontact-listview-template">
+    #if(photoUrl!=""){#
+        <img src="${photoUrl}" class="photo" id="${inv_id}"/>
+    #}else{#
+        <img src="images/default-portrait.png" class="photo" id="${inv_id}"/>
+    #}#
+   
+    <a href="\#hhProfileView?hhId=${hh_id}&amp;invId=${inv_id}&amp;fname=${fname}&amp;lname=${lname}" style="text-decoration:none;" onclick="javascript:setCurrentUser(${inv_id}, '${fname}', '${lname}');">${lname}, ${fname} 
+    
+            <p class="contact-type">${type}</p>
+            <div data-role="button" id="pictureBtn_${inv_id}" onclick="javascript:takePicture(${inv_id});" style="font-size:10px" >Capture</div>
+    </a>
+</script>
+
+ <script type="text/x-kendo-template" id="recentcontact-listview-template1">
+     <a href="\#hhProfileView?hhId=${hh_id}" style="text-decoration:none;"><span class="km-listview-link">${lname}, ${fname}</span></a>          
+ </script>
+
+ <script type="text/x-kendo-template" id="recentcontact-listview-template2">
+      <a href="\#hhSnapshotView?hhId=${hh_id}" onclick="contactnameclick(${hh_id});">${lname}, ${fname} </a>             
+ </script>
+   
+ 
+
+<!--not used-->
+<div data-role="view" id="hhSnapshotView" data-title="Household Snapshot" data-align="left" data-show="getHHSnapshot" >
+	<header data-role="header">
+		<div data-role="navbar">
+            <a data-role="backbutton" data-align="left" href="#recentContactsView">Back</a>
+            <span data-role="view-title"></span>
+		</div>
+	</header>
+    
+    <div id="hhSnapshotViewContent" data-role="content">
+        <div>
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <li>
+                    Household Members
+                    <ul data-role="listview" data-style="inset">
+                        <li>
+                           <div id="hhListGrid"></div>
+                        </li>
+                    </ul>
+                </li>
+         
+                <li>
+                    Accounts
+                    <ul data-role="listview" data-style="inset">  
+                        <li>
+                            <h3>Internal Accounts</h3>
+                           <div id="intAcctGrid"></div>                  
+                        </li>
+                        <li>
+                             <h3>External Accounts</h3>                             
+                             <div id="extAcctGrid"></div>
+                        </li>
+                    </ul>
+                    
+                 </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+

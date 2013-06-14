@@ -1,0 +1,76 @@
+<div data-role="view" id="fileView" data-title="My File" data-align="left" data-show="getMyFiles">
+	<header data-role="header">
+		<div data-role="navbar">            
+            <a data-role="backbutton" data-align="left" id="backBtn" href="#fileView">Back</a>         
+            
+            <span data-role="view-title"></span>
+            <a data-role="button" data-align="right" data-rel="modalview" href="#addFolderDialog" id="addBtn" data-icon="add" ></a>
+            
+		</div>
+        
+	</header> 
+   
+    <div id="fileField" type="text" readonly="readonly" style="vertical-align:top;background:#777978;color:white;height:2em;margin-bottom:3em;font-style:italic"></div>
+    
+    <div id="addFolderDialog" data-role="modalview" style="width:70%;height:50%" >
+          <p>     
+              <p>
+                  <input id="radio_d" type="radio" value="d" name="dir-or-file" checked onclick="javascript:directorySelected();" />Directory
+                  <input id="radio_f" type="radio" value="f" name="dir-or-file" onclick="javascript:showTextarea();"/>File
+              </p>      	
+          
+              <p>
+                  <input type="text" id="newName" placeholder="New Name" style="vertical-align:top"> 
+                   <span data-role="button" id="createBtn" onclick="javascript:createBtnClicked();" style="margin-left:1em">Create</span>
+                   <span data-role="button" id="cancelAddFolderBtn" onclick="javascript:closeAddFolderDiaog();" style="margin-left:1em">Cancel</span>
+               </p>
+               <div>
+                   <textarea id="filetext" style="display:none;margin-left:10px;width:400px;height:200px"></textarea>
+              </div>
+          </p>
+    </div>
+    
+    <div class="ui-grid-c" id="dirContent">
+	  <!--<div class="ui-block-a">
+		    <div class="folder"><p>folder name</p></div>
+	   </div>
+    	<div class="ui-block-b">
+    		<div class="folder"> <p>folder name</p></div>
+    	</div>
+    	<div class="ui-block-c">
+    		<div class="folder"><p>folder name</p></div>
+    	</div>
+    	<div class="ui-block-d">
+    		<div class="folder"><p>folder name</p></div>
+    	</div>
+    	<div class="ui-block-a">
+    		<div class="file"><p>file name</p></div>
+    	</div>
+    	<div class="ui-block-b">
+    		<div class="file"><p>file name</p></div>
+    	</div>
+    	<div class="ui-block-c">
+    		<div class="file"><p>file name</p></div>
+    	</div>
+    	<div class="ui-block-d">
+    		<div class="file"><p>file name</p></div>
+    	</div>-->
+    </div>    
+</div>   
+    
+    
+    
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+

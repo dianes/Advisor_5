@@ -57,11 +57,6 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-    <Content Include="css\index.css" />
-    <Content Include="js\index.js" />
-    <Content Include="img\logo.png" />
-    <Content Include="img\cordova.png" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
       <TargetName>cordova.js</TargetName>
@@ -70,6 +65,52 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="images\address_16.png" />
+    <Content Include="images\address_24.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\coloricons-sprite.png" />
+    <Content Include="images\default-portrait.png" />
+    <Content Include="images\file-download.png" />
+    <Content Include="images\file.png" />
+    <Content Include="images\folder.png" />
+    <Content Include="images\folder_h.png" />
+    <Content Include="images\folder_v.png" />
+    <Content Include="index.html" />
+    <Content Include="kendo\js\jquery.min.js" />
+    <Content Include="kendo\js\kendo.mobile.min.js" />
+    <Content Include="kendo\styles\images\back.png" />
+    <Content Include="kendo\styles\images\KendoUI.ttf" />
+    <Content Include="kendo\styles\images\KendoUI.woff" />
+    <Content Include="kendo\styles\kendo.mobile.all.min.css" />
+    <Content Include="Reports\Alliance Large-Cap Core.pdf" />
+    <Content Include="Reports\Anchor All-Cap Value.pdf" />
+    <Content Include="Reports\AP Accumulation Portfolio.pdf" />
+    <Content Include="Reports\NetWorth Report.pdf" />
+    <Content Include="Reports\Proposal Report.pdf" />
+    <Content Include="Reports\Select Separate Account.pdf" />
+    <Content Include="scripts\accountDetail.js" />
+    <Content Include="scripts\contact.js" />
+    <Content Include="scripts\data.js" />
+    <Content Include="scripts\file.js" />
+    <Content Include="scripts\householdProfile.js" />
+    <Content Include="scripts\jquery.mobile-1.2.0.min.js" />
+    <Content Include="scripts\kendo.all.min.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\proposal.js" />
+    <Content Include="scripts\xml2json.js" />
+    <Content Include="styles\jquery.mobile-1.2.0.min.css" />
+    <Content Include="styles\kendo.common.min.css" />
+    <Content Include="styles\kendo.default.min.css" />
+    <Content Include="styles\main.css" />
+    <Content Include="styles\orange.css" />
+    <Content Include="styles\sampletheme.css" />
+    <Content Include="upload.txt" />
+    <Content Include="views\chartsView.html" />
+    <Content Include="views\contactSearchView.html" />
+    <Content Include="views\fileView1.html" />
+    <Content Include="views\morechartsView.html" />
+    <Content Include="views\recentContactsView.html" />
+    <Content Include="views\recentProposalsView.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
