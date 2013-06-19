@@ -107,7 +107,7 @@
     <Content Include="upload.txt" />
     <Content Include="views\chartsView.html" />
     <Content Include="views\contactSearchView.html" />
-    <Content Include="views\fileView1.html" />
+    <Content Include="views\fileView2.html" />
     <Content Include="views\morechartsView.html" />
     <Content Include="views\recentContactsView.html" />
     <Content Include="views\recentProposalsView.html" />

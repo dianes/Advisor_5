@@ -1,6 +1,6 @@
 /*global variables*/
 var g_hhAcctListGrpFooter;
-var LOCAL = false;
+var LOCAL =false;
 var instId=6083;
 var bId=10408149;
 var modId = 120;

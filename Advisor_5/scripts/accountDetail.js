@@ -108,7 +108,7 @@ function downloadFile(location,filename){
      //  document.location.href="#views/fileView1.html";
         
         
-          document.location.href="#views/fileView.html?dir=other";
+          document.location.href="#views/fileView2.html?dir=other";
      //   alert("downloadFile: document.location.href="+document.location.href);
         console.log("download complete: " + entry.fullPath);
     },

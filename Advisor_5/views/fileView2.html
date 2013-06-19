@@ -1,4 +1,4 @@
-<div data-role="view" id="fileView" data-title="My File" data-align="left" data-show="getMyFiles">
+<div data-role="view" id="fileView" data-title="My Files" data-align="left" data-show="getMyFiles">
 	<header data-role="header">
 		<div data-role="navbar">            
             <a data-role="backbutton" data-align="left" id="backBtn" href="#fileView">Back</a>         
@@ -56,6 +56,18 @@
     		<div class="file"><p>file name</p></div>
     	</div>-->
     </div>    
+    
+    <ul data-role="actionsheet" id="inboxActions" data-open="onActionSheetOpen" data-popup='{"direction": "left"}'>
+            <li><a href="#" data-action="openBtnClick">Open</a></li>
+            <li><a href="#" data-action="copyBtnCLicked">Copy</a></li>
+            <li><a href="#" data-action="moveBtnCLicked">Move</a></li>
+            <li><a href="#" data-action="pasteBtnCLicked" id="pasteBtn">Paste</a></li>
+            <li><a href="#" data-action="deleteBtnClicked">Delete</a></li>
+            
+            <!--<li><a href="#" data-action="closeMenuOptions">Cancel</a></li>-->
+        
+        
+    </ul>   
 </div>   
     
     

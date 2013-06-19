@@ -298,7 +298,7 @@ function onUploadFail(error){
 }
 
 function setCurrentUser(invId, fname, lname){
-  alert("setCurrentUser: invId="+invId+", fname="+fname+",lname="+lname);
+ // alert("setCurrentUser: invId="+invId+", fname="+fname+",lname="+lname);
     currentInvId = invId;
     currentUsername = fname + " " + lname;
     //alert("setCurrentUser: currentUsername="+currentUsername);
