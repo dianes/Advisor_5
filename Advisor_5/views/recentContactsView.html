@@ -17,7 +17,7 @@
         <img src="images/default-portrait.png" class="photo" id="${inv_id}"/>
     #}#
    
-    <a href="\#hhProfileView?hhId=${hh_id}&amp;invId=${inv_id}&amp;fname=${fname}&amp;lname=${lname}" style="text-decoration:none;" onclick="javascript:setCurrentUser(${inv_id}, '${fname}', '${lname}');">${lname}, ${fname} 
+    <a href="\#hhProfileViewWithPanel?hhId=${hh_id}&amp;invId=${inv_id}&amp;fname=${fname}&amp;lname=${lname}" style="text-decoration:none;" onclick="javascript:setCurrentUser(${inv_id}, '${fname}', '${lname}');">${lname}, ${fname} 
     
             <p class="contact-type">${type}</p>
             <div data-role="button" id="pictureBtn_${inv_id}" onclick="javascript:takePicture(${inv_id});" style="font-size:10px" >Capture</div>
