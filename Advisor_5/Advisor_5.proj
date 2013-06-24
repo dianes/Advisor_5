@@ -32,6 +32,7 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="kendo\styles\Default" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -75,9 +76,12 @@
     <Content Include="images\folder.png" />
     <Content Include="images\folder_h.png" />
     <Content Include="images\folder_v.png" />
+    <Content Include="images\logo-thomsonreuters.jpg" />
+    <Content Include="images\sprite.png" />
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />
+    <Content Include="kendo\styles\Default\sprite.png" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\KendoUI.ttf" />
     <Content Include="kendo\styles\images\KendoUI.woff" />

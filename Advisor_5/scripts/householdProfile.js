@@ -1,6 +1,6 @@
 function getHHProfile(e){
    // alert("getHHProfile");
-    debugger;
+   // debugger;
     $("#hhProfileListGrid").empty();
     $("#hhAccountInfo").empty();
     var invId = e.view.params.invId;
@@ -171,5 +171,52 @@ function getTotal(){
 
 function gotoAccountDetal(acctNum, hhId){
  //   alert("gotoAccountDetal");
-    document.location.href="#accountDetailView?acctId=" + acctNum + "&householdId=" + hhId;
+    document.location.href="#accountDetailViewWithPanelBar?acctId=" + acctNum + "&householdId=" + hhId;
 }
+
+
+function getHHProfileWithPanelBar(e){
+   // alert("getHHProfile");
+   // debugger;
+    $("#hhProfileListGrid").empty();
+    $("#hhAccountInfo").empty();
+    var invId = e.view.params.invId;
+    var fname = e.view.params.fname;
+    var lname = e.view.params.lname;
+    setCurrentUser(invId, fname, lname);
+    
+    $('#hhProfilePanelBar').kendoPanelBar({expandMode:"multiple"});
+    var panelBar = $('#hhProfilePanelBar').data("kendoPanelBar");
+    panelBar.expand($("#demoInfo"));
+    
+    var args = [];
+    args[0] = e.view.params.hhId;
+    var param = '{instId:'+instId+',brokerId:'+bId+',householdId:'+args[0]+',planId:0,propId:0}';
+    var url = "http://" + SERVER + "/ContactService/Service1.asmx/GetHouseholdProfile";    
+    
+    if(LOCAL){        
+        data = JSON.parse(HHPROFILE_DATA);
+        onGetHHProfileSuccess(data, args);
+    }else{        
+        ajaxCall(url, param, onGetHHProfileSuccess, data, args);
+    }
+}
+
+function formatPhoneNo(phoneNo){
+   // alert("formatPhoneNo");
+   // alert("formatPhoneNo: phoneNo="+ phoneNo);
+    var rtnNo;
+    if(phoneNo.indexOf('-')>-1){
+        rtnNo = phoneNo;
+    }
+    else{
+        var part1 = phoneNo.substring(0,3);
+        var part2 = phoneNo.substring(3,6);
+        var part3 = phoneNo.substring(6);
+        rtnNo = kendo.format("({0})-{1}-{2}", part1, part2, part3);
+    }
+    //alert("formatPhoneNo: rtnNo="+ rtnNo);
+    return rtnNo;
+    
+}
+

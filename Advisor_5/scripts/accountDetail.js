@@ -2,6 +2,31 @@ function initScrollView(e) {
         e.view.element.find("#scrollView").kendoMobileScrollView(); 
 }
 
+function getAcctDetailWithPanelBar(e){
+    var acctId = e.view.params.acctId;
+    var hhId = e.view.params.householdId;
+    $("#accountDetailInfo").empty();
+    $("#holdingsInfo").empty();
+    $("#chart").empty();
+    $("#assetsTable").empty();    
+    $('#archivedRpts').empty();
+    
+    var morechartHref = '#views/morechartsView.html?householdId='+hhId+'&accountId='+acctId+'&investorId='+currentInvId;
+    $("#morechart").attr('href', morechartHref);
+    
+    $('#AcctDetailViewWithPanelBar1').kendoPanelBar({expandMode:"multiple"});
+    $('#AcctDetailViewWithPanelBar2').kendoPanelBar({expandMode:"multiple"});
+    
+    var panelBar1 = $('#AcctDetailViewWithPanelBar1').data("kendoPanelBar");
+    panelBar1.expand($("#acctInfo"));
+    
+    var panelBar2 = $('#AcctDetailViewWithPanelBar2').data("kendoPanelBar");
+    panelBar2.expand($("#allocation"));
+    
+    getAcctDetailData(hhId, acctId);
+    showMorecharts();
+}
+
 function getAcctDetail(e){
   //  alert("getAccountDetail");
     var acctId = e.view.params.acctId;
@@ -15,7 +40,7 @@ function getAcctDetail(e){
     var morechartHref = '#views/morechartsView.html?householdId='+hhId+'&accountId='+acctId+'&investorId='+currentInvId;
     $("#morechart").attr('href', morechartHref);
     
-    getAcctDetailData(hhId, acctId);
+    getAcctDetailData(hhId, acctId);    
 }
 
 function getAcctDetailData(hhId, acctId){
@@ -354,7 +379,8 @@ function onGetPortfolioDataSuccess(data){
 
 
 function showMorecharts(e){
-    
+//function showMorecharts(){
+   // alert("showMorecharts");
     var acctId = "T-15719185";
     var householdId = 6829146;
     var investorId=12147476;
@@ -375,6 +401,8 @@ function showMorecharts(e){
         ajaxCall(url, param, onGetPortfolioDataSuccess, data);  
     }    
 }
+
+
 
 
 /********************************************START NOT USED********************************************/
@@ -417,5 +445,7 @@ function getArchivedReports(hhId, acctId){
         ajaxCall(url, param, onGetArchivedReportsSuccess, data);
     }
 }
+
+
 
 

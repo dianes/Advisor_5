@@ -23,6 +23,7 @@ var currentUsername = null;
 var directoriesObjArray = new Array();
 var DELIMITER="#";
 var clientsDir = null;
+var LoggedIn = false;
 
 
 
@@ -114,6 +115,20 @@ function onGetFileSuccess(data){
     $.each(data, function(index, value) {
       files_to_show[index] = value.substr(value.lastIndexOf('\\')+1);    
     });    
+}
+
+function showHome(){
+    //alert("showHome");
+    if(!LoggedIn){
+        var win = $('#modalViewlogin').data("kendoMobileModalView");  
+        win.open();   
+    }
+        
+}
+
+function closeModalViewLogin(){
+    $('#modalViewlogin').data("kendoMobileModalView").close();
+    LoggedIn = true;
 }
 
 

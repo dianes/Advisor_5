@@ -29,15 +29,15 @@
         <link href="styles/orange.css" rel="stylesheet" />
     </head>
     <body>
-        <div data-role="view" id="tabstrip-home" data-title="Thomson One Advisor">
+        <div data-role="view" id="tabstrip-home" data-title="Thomson One Advisor" data-init="showHome" >
+            <!--<img src="images/logo-thomsonreuters.jpg"/>     -->  
             <h1>Welcome</h1>
-            <p>
-                
-            </p>
+            
+            
         </div>
 
         <!-- Household Profile View-->
-        <div data-role="view" id="hhProfileView" data-title="Household Profile" data-align="left" data-show="getHHProfile" >
+    <!--    <div data-role="view" id="hhProfileView" data-title="Household Profile" data-align="left" data-show="getHHProfile" >
         	<header data-role="header">
         		<div data-role="navbar">
                     <a data-role="backbutton" data-align="left">Back</a>
@@ -70,9 +70,46 @@
                 </div>
         	</div>
         </div>
+      -->  
+        
+        <!-- Household Profile View with PanelBar-->
+        <div data-role="view" id="hhProfileViewWithPanel" data-title="Household Profile" data-align="left" data-show="getHHProfileWithPanelBar" >
+        	<header data-role="header">
+        		<div data-role="navbar">
+                    <a data-role="backbutton" data-align="left">Back</a>
+                    <span data-role="view-title"></span>
+        		</div>
+        	</header>
+            
+            <div id="HouseholdProfileViewContent" data-role="content">
+                <div>                    
+                    <ul id="hhProfilePanelBar">
+                        <!-- <li class="k-state-active">-->
+                          <li id="demoInfo">
+                             <!--<span class="k-link k-state-selected">DEMOGRAPHIC INFORMATION</span>-->
+                             DEMOGRAPHIC INFORMATION
+                             <ul data-role="listview" data-style="inset">
+                                <li>
+                                    <div id="hhProfileListGrid"></div>
+                                </li>
+                            </ul>
+                         </li>
+                        <li id="acctsInfo">
+                            ACCOUNTS INFORMATION
+                            <ul data-role="listview" data-style="inset">
+                                <li>
+                                     <div id="hhAccountInfo"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        	</div>
+            
+        </div>
   
         <!-- Account Detail View -->
-         <div data-role="view" id="accountDetailView" data-title="Account Snapshot" data-init="initScrollView" data-show="getAcctDetail">
+        <!-- <div data-role="view" id="accountDetailView" data-title="Account Snapshot" data-init="initScrollView" data-show="getAcctDetail">
         	<header data-role="header">
         		<div data-role="navbar">
                    <a data-role="backbutton" data-align="left">Back</a>
@@ -122,17 +159,99 @@
                            <li>
                                  <a id="morechart" style="margin-left:1.5em">More Charts</a>
                            </li>
-                           <li>
-                                 
+                           <li>                                 
                                Archived Reports
                                  <ul data-role="listview" data-style="inset">
                                      <li>
                                          <div id="archivedRpts"></div>
                                      </li>
-                                 </ul>
-                                   
+                                 </ul>                                   
                            </li>
                         </ul>               
+                    </div>
+                </div>
+         </div>-->
+        
+        <!--Account Detail View with PanelBar -->
+        <div data-role="view" id="accountDetailViewWithPanelBar" data-title="Account Snapshot" data-init="initScrollView" data-show="getAcctDetailWithPanelBar">
+        	<header data-role="header">
+        		<div data-role="navbar">
+                   <a data-role="backbutton" data-align="left">Back</a>
+                    <span data-role="view-title"></span>
+        		</div>
+        	</header>
+                <div id="scrollView">
+                    <div data-role="page">                   
+                        <ul id="AcctDetailViewWithPanelBar1">
+                            <li id="acctInfo">
+                                Account Information
+                                <ul data-role="listview" data-style="inset">
+                                    <li>
+                                        <div id="accountDetailInfo"></div>
+                                    </li>
+                                </ul>
+                             </li>
+                             <li id="holdings">      
+                                Holdings Information
+                                <ul data-role="listview" data-style="inset">                                 
+                                    <li>
+                                           <div id="holdingsInfo"></div>
+                                    </li>
+                                </ul>
+                              </li>
+                         </ul>
+                    </div>
+                    
+                    <div data-role="page">
+                       <ul id="AcctDetailViewWithPanelBar2">
+                            <li id="allocation">
+                                Allocation Breakdown                            
+                                <ul data-role="listview" data-style="inset">
+                                     <li>
+                                         <div class="ui-grid-a" id="chartarea">
+                                	        <div class="ui-block-a">
+                                		        <div id="chart"></div>
+                                	        </div>
+                                    	    <div class="ui-block-b">
+                                    		    <div id="assetsTable" style="margin-top:5em"></div>
+                                    	     </div>                                 
+                                        </div>
+                                      </li>                                
+                                </ul>
+                            </li>                           
+                           <li id="archiveRpt">                                 
+                               Archived Reports
+                                 <ul data-role="listview" data-style="inset">
+                                     <li>
+                                         <div id="archivedRpts"></div>
+                                     </li>
+                                 </ul>                                   
+                           </li>
+                           <li>
+                                More Charts
+                                <ul data-role="listview" data-style="inset" data-type="group">
+                                    <li>
+                                        Portfolio Growth                                        
+                                        <ul data-role="listview" data-style="inset">
+                                             <li>
+                                                 <div id="portfolioGrowthChart"></div>
+                                              </li>                                
+                                        </ul>
+                                    </li>
+                                   <li>
+                                         Holding Period Volatility
+                                           <ul data-role="listview" data-style="inset">
+                                             <li>
+                                                 <div id="bestWorstAvgRtnChart"></div>
+                                             </li>
+                                           </ul>
+                                   </li>                                       
+                                 </ul> 
+                           </li>
+                        </ul> 
+                            
+                                <!-- <a id="morechart" style="margin-left:1.5em">More Charts</a>-->
+                        
                     </div>
                 </div>
          </div>
@@ -167,15 +286,15 @@
             </p>
              <p style="margin-top:-1em">
                  #if(homePhone != ""){#
-                     <div class="contact-phone"><a data-rel="external" href="tel:#=homePhone#">#=homePhone#</a> (H)</div>
+                     <div class="contact-phone"><a data-rel="external" href="tel:#=homePhone#">#=formatPhoneNo(homePhone)#</a> (H)</div>
                   #}else{#
-                     <div class="contact-phone"><a data-rel="external" href="tel:5555555555">5555555555</a> (H)</div>
+                     <div class="contact-phone"><a data-rel="external" href="tel:5555555555">(555)-555-5555</a> (H)</div>
                   #}#
                  
                   #if(phone != ""){#
-                     <div class="contact-phone"><a data-rel="external" href="tel:#=phone#">#=phone#</a> (M)</div>
+                     <div class="contact-phone"><a data-rel="external" href="tel:#=phone#">#=formatPhoneNo(phone)#</a> (M)</div>
                   #}else{#
-                     <div class="contact-phone"><a data-rel="external" href="tel:5555555555">5555555555</a> (M)</div>
+                     <div class="contact-phone"><a data-rel="external" href="tel:5555555555">(555)-555-5555</a> (M)</div>
                   #}#
               </p>
                   
@@ -291,6 +410,14 @@
             <span data-role="button" id="cancelDeleteBtn" data-click="cancelDeleteBtnClicked">Cancel</span>
             <span data-role="button" id="okDeleteBtn" data-click="okDeleteBtnClicked">OK</span>
         </div>        
+    </div>
+        
+    <div data-role="modalview" id="modalViewlogin" style="width:60%;height:13em;">              
+        <ul data-role="listview" data-style="inset">
+            <li><label for="username">Username:</label><input type="text" id="usename" placeholder="Login ID"/></li>
+            <li><label for="password">Password:</label><input type="password" id="password" placeholder="******"/></li>
+        </ul>
+        <a data-click="closeModalViewLogin" id="modalviewLoginBtn" data-role="button">Login</a>
     </div>
      
  </body>

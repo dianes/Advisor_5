@@ -60,7 +60,7 @@ function onGetClientsDirectoryWin(dir){
 
 
 function getMyFiles(e){ 
-    alert("getMyFiles");
+   // alert("getMyFiles");
   //  alert("getMyFiles: e.view.params.dir="+e.view.params.dir);
   //  alert("getMyfiles, activeItem="+activeItem);
     clickItemAction();
@@ -259,11 +259,11 @@ function listDirectory(directoryEntry){
 }
 
 function clickItemAction(){    
- alert("clickItemAction");    
+ //alert("clickItemAction");    
     var folders = $('.folder');
     var files = $('.file');
     var backBtn = $('#backBtn');
-    alert("clickItemAction:backBtn="+backBtn);
+  //  alert("clickItemAction:backBtn="+backBtn);
     
  /*   folders.live('click', function(){    
         alert("folder clicked");
