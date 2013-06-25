@@ -34,7 +34,7 @@ function onDeviceReady(){
     alert("ondeviceready");  
    
     getFileSystem();
-    getInitData();
+    getInitData();  
 }
 
 
@@ -79,7 +79,7 @@ function onGetInitDataSuccess(data){
 
 
 function onGetDirectorySuccess(data){
-  //  alert("onGetdirectorySuccess: data="+data);
+   // alert("onGetdirectorySuccess: data="+data);
     
     $.each(data, function(index, value) {       
    //  directories_to_show[index] = value.substr(value.lastIndexOf('\\')+1);  
@@ -108,7 +108,7 @@ function onGetDirectorySuccess(data){
     });  
     
    // for(var i=0;i<directoriesObjArray.length; i++)
-       // alert("onGetDirectorySuccess: directoriesObjArray["+i+"].name="+directoriesObjArray[i].name);
+    //    alert("onGetDirectorySuccess: directoriesObjArray["+i+"].name="+directoriesObjArray[i].name);
 }
 
 function onGetFileSuccess(data){

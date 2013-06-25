@@ -205,20 +205,35 @@ body
     cursor:pointer;
 }
 
-.folder{
+/*.folder{
 	background: url('../images/folder.png') no-repeat 50% 0%;
 	margin:2px;
 	padding-top:40px;
 	text-align:center;    
+}*/
+
+.folder{
+    background: url('../images/folder.png') no-repeat 50% 0%;
+    margin-top: 20px;
+    padding-top:40px;
+    text-align:center
 }
 
 
-.file{
+/*.file{
 	background: url('../images/file.png') no-repeat 50% 30%;
 	margin:2px;
 	padding-top:40px;
 	text-align:center;    
+}*/
+
+.file{
+    background: url('../images/file.png') no-repeat 50% 30%;
+    margin-top: 20px;
+    padding-top: 40px;
+    text-align:center
 }
+
 /*end for jquery grid folder/file */
 
 .delete-link {
@@ -241,14 +256,22 @@ body
         display: none;
     }
 
-
-
 .photo {
         width: 64px;
         height: 75px;
         border-radius: 3px;
         float: left;
-        margin-right: 10px;
+        margin-right: 10px;      
+    }
+
+.photo_f {
+        width: 64px;
+        height: 75px;
+        border-radius: 3px;
+        float: left;
+        margin-right: 10px;       
+        padding-top:30px;
+        padding-bottom:30px;        
     }
 
 
@@ -259,6 +282,26 @@ body
     margin-right: 1em;
     display:inline
 }
+
+#modalViewlogin{
+    -webkit-border-radius: 10px;
+    
+}
+
+#zoomable-content{
+    position: absolute;
+    width: 200px;
+    top: 50px;
+    left: 50px;
+    padding: 20px 20px 40px 20px;
+    background: black;
+    color: white;
+    border: 2px solid white;
+    -webkit-border-radius: 10px;
+    -webkit-opacity: 0.5
+    
+}
+
 
 
 

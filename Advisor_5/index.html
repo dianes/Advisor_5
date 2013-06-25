@@ -29,11 +29,16 @@
         <link href="styles/orange.css" rel="stylesheet" />
     </head>
     <body>
-        <div data-role="view" id="tabstrip-home" data-title="Thomson One Advisor" data-init="showHome" >
-            <!--<img src="images/logo-thomsonreuters.jpg"/>     -->  
-            <h1>Welcome</h1>
-            
-            
+        <div data-role="view" id="tabstrip-home" data-title="Thomson One Advisor" data-init="showHome" data-zoom="true" >
+            <div data-role="content">
+                <!--<img src="images/logo-thomsonreuters.jpg"/>     -->  
+                
+                <div id="zoomable-content">
+                    <h1>Welcome</h1>
+                    The contents of this view are zoomable using pinch/zoom gestures.
+                </div>
+                <img src="images/logo-thomsonreuters.jpg"/>
+            </div>
         </div>
 
         <!-- Household Profile View-->
@@ -73,7 +78,7 @@
       -->  
         
         <!-- Household Profile View with PanelBar-->
-        <div data-role="view" id="hhProfileViewWithPanel" data-title="Household Profile" data-align="left" data-show="getHHProfileWithPanelBar" >
+        <div data-role="view" id="hhProfileViewWithPanel" data-title="Household Profile" data-align="left" data-show="getHHProfileWithPanelBar" data-zoom="true">
         	<header data-role="header">
         		<div data-role="navbar">
                     <a data-role="backbutton" data-align="left">Back</a>
@@ -388,7 +393,8 @@
         
         <script>
             var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
-         </script>
+                    
+        </script>
         
         
         

@@ -1,4 +1,4 @@
-<div data-role="view" id="recentContactsView" data-title="Recent Contacts" data-show="getContactList">
+<div data-role="view" id="recentContactsView" data-title="Recent Contacts" data-show="getContactList" >
 	<header data-role="header">
 		<div data-role="navbar">
             <a id="btnContactSearch" data-role="button" href="views/contactSearchView.html" 
@@ -11,12 +11,13 @@
 </div>    
 
 <script type="text/x-kendo-template" id="recentcontact-listview-template">
+   <div id="wrap"> 
     #if(photoUrl!=""){#
-        <img src="${photoUrl}" class="photo" id="${inv_id}"/>
+        <img src="${photoUrl}" class="photo" id="${inv_id}" onmouseover="mouseover(this)" onmouseout="mouseout(this)" />
     #}else{#
-        <img src="images/default-portrait.png" class="photo" id="${inv_id}"/>
+        <img src="images/default-portrait.png" class="photo" id="${inv_id}" onmouseover="mouseover(this)" onmouseout="mouseout(this)" />
     #}#
-   
+   </div> 
     <a href="\#hhProfileViewWithPanel?hhId=${hh_id}&amp;invId=${inv_id}&amp;fname=${fname}&amp;lname=${lname}" style="text-decoration:none;" onclick="javascript:setCurrentUser(${inv_id}, '${fname}', '${lname}');">${lname}, ${fname} 
     
             <p class="contact-type">${type}</p>

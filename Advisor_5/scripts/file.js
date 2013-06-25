@@ -64,6 +64,7 @@ function getMyFiles(e){
   //  alert("getMyFiles: e.view.params.dir="+e.view.params.dir);
   //  alert("getMyfiles, activeItem="+activeItem);
     clickItemAction();
+    
     //alert("$('#backBtn')="+$('#backBtn'));
     
    // alert("getMyFiles: e.view.params.dir="+e.view.params.dir);
@@ -189,7 +190,7 @@ function listDirectory(directoryEntry){
                  {    
                     portrait = getPortrait(currentUsername);
                     // alert("listdirectory: portrait="+portrait);
-                    dirContent.append('<div class="ui-block-a"><img src="' + portrait + '" class="photo" style="margin-left:3em;width:96px;height:112.5px;" /><P/><p style="margin-left:4em">'+currentUsername + '</p></div>');
+                    dirContent.append('<div class="ui-block-a"><img src="' + portrait + '" class="photo_f" style="margin-left:3em;width:96px;height:112.5px;" /><P/><p style="margin-left:4em">'+currentUsername + '</p></div>');
                     
                  }
                 else if(letter == 'b' && i>0)
@@ -208,7 +209,7 @@ function listDirectory(directoryEntry){
             //in case there's no folder or file, just show the portrait
             if(sortedArr.length == 0){
                 portrait = getPortrait(currentUsername);
-                dirContent.append('<div class="ui-block-a"><img src="' + portrait+ '" class="photo" style="margin-left:3em;width:96px;height:112.5px;" /><P/><p style="margin-left:4em">'+currentUsername + '</p></div>');
+                dirContent.append('<div class="ui-block-a"><img src="' + portrait+ '" class="photo_f" style="margin-left:3em;width:96px;height:112.5px;" /><P/><p style="margin-left:4em">'+currentUsername + '</p></div>');
             }    
         }
         else
@@ -228,7 +229,7 @@ function listDirectory(directoryEntry){
                         portrait = getPortrait(item.name);
                      //   alert("listdirectory: portrait="+portrait);
                      //   dirContent.append('<div class="ui-block-'+letter+'"><img src="' + portrait + '" class="photo" style="margin-left:.5em;text-align:left"><div class="folder" style="margin-left:2em"><p>'+item.name + '</p></div></div>'); 
-                        dirContent.append('<div class="ui-block-'+letter+'"><img src="' + portrait + '" class="photo" style="margin-left:.5em;text-align:left"/><a data-rel="actionsheet"  style="text-decoration:none;" data-role="button" href="#inboxActions" data-actionsheet-context="'+item.name +'|d"><div class="folder" style="margin-left:2em;" ><p style="text-decoration:none;">'+item.name + '</p></div></a></div>');                         
+                        dirContent.append('<div class="ui-block-'+letter+'"><div id="wrap"><img src="' + portrait + '" class="photo_f" style="margin-left:1.5em;text-align:left" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></div><a data-rel="actionsheet"  style="text-decoration:none;" data-role="button" href="#inboxActions" data-actionsheet-context="'+item.name +'|d"><div class="folder" style="margin-left:2em;" ><p style="text-decoration:none;">'+item.name + '</p></div></a></div>');                         
                     }
                     else
                     {
@@ -242,7 +243,7 @@ function listDirectory(directoryEntry){
                         portrait = getPortrait(item.name);
                      //   alert("listdirectory: portrait="+portrait);
                      //   dirContent.append('<div class="ui-block-'+letter+'"><img src="' + portrait + '" class="photo" style="margin-left:2em;text-align:left"><div class="file"><p>'+item.name + '</p></div></div>');
-                        dirContent.append('<div class="ui-block-'+letter+'"><img src="' + portrait + '" class="photo" style="margin-left:2em;text-align:left"/><a data-rel="actionsheet" data-role="button"  style="text-decoration:none;" href="#inboxActions" data-actionsheet-context="'+item.name +'|f"><div class="file"><p style="text-decoration:none;">'+item.name + '</p></div></a></div>');
+                        dirContent.append('<div class="ui-block-'+letter+'"><div id="wrap"><img src="' + portrait + '" class="photo_f" style="margin-left:2em;text-align:left" onmouseover="mouseover(this)" onmouseout="mouseout(this)" /></div><a data-rel="actionsheet" data-role="button"  style="text-decoration:none;" href="#inboxActions" data-actionsheet-context="'+item.name +'|f"><div class="file2"><p style="text-decoration:none;">'+item.name + '</p></div></a></div>');
                     }
                     else
                     {
@@ -771,6 +772,18 @@ function onActionSheetOpen(e){
     getActiveItem(name, type);
 }
 
+
+
+function mouseover(elm){
+  //  alert("mouseover");
+    kendo.fx(elm).zoom("out").startValue(2).endValue(1).play();
+}
+
+function mouseout(elm){
+  //  alert("mouseout");
+    
+    kendo.fx(elm).zoom("in").startValue(1).endValue(2).play();
+ }
 
 
 

@@ -91,10 +91,10 @@ function onGetAccountsInfoSuccess(data, args){
                // template: "<a href='\#accountDetailView?acctId=${AccountNumber}&householdId=" + hhId + "'>${AccountNumber}</a>"               
                 template: "<div style='color:\\#7AADDE;font-weight:bold'><a href='javascript:gotoAccountDetal(\"${AccountId}\"," + hhId + ")' style='text-decoration:none'>${AccountNumber}</a></div>"
             },
-          /*  {
+            {
                 field: "AccountName",
                 title: "ACCOUNT NAME"
-            },*/
+            },
           /*  {
                 field: "OwnerName",
                 title: "Owner"
@@ -106,7 +106,7 @@ function onGetAccountsInfoSuccess(data, args){
                 groupFooterTemplate:"#= g_hhAcctListGrpFooter #",
                 footerTemplate: "Total Value:"
             },
-           /* {
+            /*{
                 field: "DiscretionaryType", values: [{text: "Non-Discretionary", value: "n"},
                                                      {text: "Discretionary", value:"y"}],
                 title: "Discretion"                           

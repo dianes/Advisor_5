@@ -1,5 +1,5 @@
 function getContactList(){
-   // getPhotoImages();
+   // getPhotoImages();    
     
     var url = "http://" + SERVER + "/ContactService/Service1.asmx/GetRecentContacts";
     var param = '{InstID:' + instId + ', BrokerID:' + bId + '}'; 
@@ -11,6 +11,8 @@ function getContactList(){
         ajaxCall(url, param, onGetContactListSuccess, data);  
     } 
 }
+
+
 
 function onGetContactListSuccess(data){
   //  alert("onGetContactListSuccess");
