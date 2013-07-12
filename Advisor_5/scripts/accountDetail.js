@@ -70,7 +70,8 @@ function onGetArchivedReportsSuccess(data){
     
     $("#archivedRpts").kendoGrid({
              dataSource: {data: data.BusinessObjects                              
-            },                                
+            },   
+            sortable: true,
             columns: [                       
                 {
                     field: "Report_name",
@@ -217,7 +218,7 @@ function assetsTable(list){
     $("#assetsTable").kendoGrid({
                 dataSource: dataArray,
                 rowTemplate: kendo.template($("#assetsTemplate").html()),      
-            
+                sortable: true,               
                columns: [
               { field: "color",
                 title: " ",
@@ -242,7 +243,7 @@ function assetsTable(list){
                  }
              }
          ],
-      //  editable:true,
+        //editable:true,
                 
          });
 }
@@ -260,7 +261,8 @@ function bindHoldingsInfo(data){
     
     $("#holdingsInfo").kendoGrid({
                     dataSource: {data: dataArray                               
-        },                                
+        },    
+        sortable: true,
         columns: [
            /* {
                 field: "Sec_name",

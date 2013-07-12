@@ -83,7 +83,8 @@ function onGetAccountsInfoSuccess(data, args){
                          { field:"MarketValue",aggregate:"sum"}
                  ]
              }
-        },                                
+        },  
+        sortable: true,
         columns: [
             {
                 field: "AccountNumber",
